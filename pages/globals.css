@@ -1,0 +1,89 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #e0e0e0;
+  --neon-color: #0ff; /* Electric cyan */
+  --accent-color: #ff0080; /* Neon magenta accent */
+  --gradient-start: #0a0a0a;
+  --gradient-end: #2a2a2a;
+  --font-sans: 'Orbitron', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #e0e0e0;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Enable smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Futuristic Neon Text Effect */
+.neon-text {
+  color: var(--foreground);
+  text-shadow: 
+    0 0 5px var(--neon-color), 
+    0 0 10px var(--neon-color), 
+    0 0 20px var(--neon-color), 
+    0 0 30px var(--accent-color);
+}
+
+/* Futuristic Hero Background Image */
+.bg-hero {
+  background-image: url('/Users/allegiancelife/nightlife-media-site/components/Images/Service_item02.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Large shadow for elements */
+.shadow-lg {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Futuristic Gradient Background */
+.bg-gradient-to-r {
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+}
+
+/* Aspect ratio utility classes */
+.aspect-w-16 {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.aspect-h-9 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Custom Utilities: Futuristic Button */
+.btn-futuristic {
+  @apply px-4 py-2 rounded-lg transition-colors duration-300;
+  background-color: var(--neon-color);
+  color: var(--background);
+  box-shadow: 0 0 8px var(--neon-color);
+}
+
+.btn-futuristic:hover {
+  background-color: var(--accent-color);
+  box-shadow: 0 0 12px var(--accent-color);
+}
